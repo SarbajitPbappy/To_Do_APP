@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Edit Task</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="taskTitle">Task Title:</label>
+    <input type="text" id="taskTitle" name="taskTitle" value="{{ task.taskTitle }}" required><br>
+    <label for="taskDescription">Task Description:</label>
+    <textarea id="taskDescription" name="taskDescription" required>{{ task.taskDescription }}</textarea><br>
+    <button type="submit">Update Task</button>
+  </form>
+{% endblock %}

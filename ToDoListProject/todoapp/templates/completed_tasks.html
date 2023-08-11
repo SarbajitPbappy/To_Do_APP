@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="display: flex; justify-content: center; align-items: center;  flex-direction: column;">
+    <div style="background-color: blue; padding: 10px; color: white; text-align: center; border-radius: 10px; width: 400px; margin-bottom: 20px;">
+      <h2>Completed Tasks</h2>
+    </div>
+
+    <table style="width: 100%; border: 2px solid black; border-collapse: collapse;">
+      <thead>
+        <tr style="margin-bottom: 10px;">
+          <th style="text-align: center; border: 2px solid black;">Title</th>
+          <th style="text-align: center; border: 2px solid black;">Description</th>
+          <th style="text-align: center; border: 2px solid black;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in completed_tasks %}
+          <tr style="margin-bottom: 10px;">
+            <td style="text-align: center; border: 2px solid black; padding: 10px;">{{ task.taskTitle }}</td>
+            <td style="text-align: center; border: 2px solid black; padding: 10px;">{{ task.taskDescription }}</td>
+            <td style="text-align: center; border: 2px solid black; padding: 10px;">Completed</td>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

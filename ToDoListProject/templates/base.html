@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}To-Do List App{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav{
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ToDo List App</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'add_task' %}" style="color: aliceblue;">Add Task</a></li>
+                <li><a href="{% url 'show_tasks' %}"style="color: aliceblue;">Show Tasks</a></li>
+                <li><a href="{% url 'completed_tasks' %}"style="color: aliceblue;">Completed Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p style="text-align: center; padding: 10px;">&copy; 2023 - To-Do List App by Sarbajit</p>
+    </footer>
+</body>
+</html>
